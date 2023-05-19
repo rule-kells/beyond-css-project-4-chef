@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:math";
 @use "colors" as *;
 @use "typography" as *;
 @use "units" as *;
@@ -33,4 +34,8 @@
   } @else {
     @error '$sizes does not have that size!';
   }
+}
+
+@function pxToRem($pxValue) {
+  @return math.div($pxValue, 16px) + 1rem;
 }

@@ -1,10 +1,80 @@
 @use "../abstracts/" as *;
 
+// .container {
+//   width: clamp(20ch, 90%, unit(1110));
+//   margin-inline: auto;
+// }
+
+// layout 
+// .container {
+//   --max-width: #{$container-max-width};
+//   --padding: unit(16);
+
+//   width: min(var(--max-width), 100% - ( var(--padding) * 2) );
+//   margin-inline: auto;
+// }
 .container {
-  width: clamp(20ch, 90%, unit(730));
+  --max-width: #{$container-max-width};
+  --padding: #{$container-inline-padding} * 2;
+
+  width: min(100% - var(--padding), var(--max-width));
   margin-inline: auto;
 }
 
+.container[data-type="wide"] {
+  --max-width: #{$container-max-width-wide};
+}
+
 .flow > * + * {
-  margin-top: var(--spacer, 1rem);
+  margin-top: var(--gap, 1rem);
+}
+
+.flex-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--flex-gap, $flex-group-gap);
+}
+
+.even-columns {
+  display: grid;
+  gap: var(--grid-gap, $grid-gap);
+
+  @include mq(tablet) {
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+  }
+}
+
+.grid-auto-fit {
+  display: grid;
+  gap: var(--grid-gap, $grid-gap);
+  grid-template-columns: repeat(auto-fit, minmax(min(pxToRem(250px), 100%), 1fr));
+}
+
+.box-shadow-1 {
+  box-shadow: 0 0 .75rem rgb(0 0 0 / .25);
+}
+
+.section-header {
+
+  &:has(p) {
+    margin-block-end: unit(36);
+  }
+
+  &:not(:has(p)) {
+    margin-block-end: unit(36) * 2.5;
+  }
+
+  &[data-decoration="true"]::after {
+    content: '';
+    display: block;
+    width: 10rem;
+    height: 1px;
+    background-color: currentColor;
+    margin-block-start: unit(36);
+
+    .text-center & {
+      margin-inline: auto;
+    }
+  }
 }
