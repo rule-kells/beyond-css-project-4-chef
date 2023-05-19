@@ -2,31 +2,84 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   
-    <title>vite sass template</title>
+
+    <!-- <title>vite sass template</title> -->
+    <title>Chef Site</title>
+    <!-- <link rel="stylesheet" href="https://use.typekit.net/qmz4zwc.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="/styles/main.scss" />
   </head>
   <body>
+    <header class="primary-header | margin-block-start-24">
+      <img src="/assets/logo.svg" alt="Chef John Wellington" class="logo" />
+      <nav class="primary-navigation | margin-block-start-24">
+        <ul class="flex-group mx-auto">
+          <li><a href="#about">About</a></li>
+          <li><a href="#meals">Meals</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+        </ul>
+      </nav>
 
- <section class="section-heading bg-neutral-200">
-    <header>
-      <h2>Section title</h2>
-      <p>Subtitle here</p>
+      <section class="section" id="about">
+        <div class="even-columns">
+          <div class="even-columns">
+            <div>
+              <img
+                class="shift-up box-shadow-1"
+                src="assets/about.jpg"
+                alt="several plates of food seen from above on a white table, some with figs and basil and others with grapefruit and sliced bananas with a brown sauce on top"
+              />
+            </div>
+            <div class="flow">
+              <header class="section-heading">
+                <h2 class="fs-800 clr-primary-500">
+                  This is a nice big heading
+                </h2>
+                <p class="fs-600 clr-neutral-400 uppercase">
+                  This is a subhead which mentions some interesting things
+                </p>
+              </header>
+              <p class="lead">This introduces the following text</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                egestas egestas dignissim. Quisque pretium nisi a rhoncus
+                posuere.
+              </p>
+              <p>
+                Ut posuere mauris nisl, sed consequat orci ultrices ac. Fusce et
+                elit et nisl eleifend hendrerit. Nulla ac aliquam mauris. Aenean
+                quam lacus, auctor eu lacus vitae, egestas elementum turpis.
+                Morbi sed justo justo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </header>
-  <!-- more content here -->
-</section>
 
- <section class="bg-neutral-900 clr-neutral-100 " >
-    <header class="section-header" data-decoration="true">
-      <h2>Section title</h2>
-      <p>Subtitle here</p>
-    </header>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, amet! Perferendis accusantium voluptatem velit a iusto nobis, porro, dolorem non alias possimus quas numquam officia labore quod quia repellendus soluta.</p>
-  <!-- more content here -->
-</section>
+    <main>
+      <section class="hero | text-center clr-neutral-100">
+        <div class="container">
+          <h1 class="fs-900 clr-neutral-100">
+            Homecooked meals delivered straight to your door
+          </h1>
 
-     <script type="module" src="/main.js"></script>
+          <div class="flex-group mx-auto">
+            <button class="button" data-type="primary">Place order</button>
+            <a href="#about" class="button" data-type="outline">More info</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer></footer>
+    <script type="module" src="/main.js"></script>
   </body>
 </html>

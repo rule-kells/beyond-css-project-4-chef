@@ -5,7 +5,7 @@
 //   margin-inline: auto;
 // }
 
-// layout 
+// layout
 // .container {
 //   --max-width: #{$container-max-width};
 //   --padding: unit(16);
@@ -33,6 +33,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: var(--flex-gap, $flex-group-gap);
+  width: fit-content;
 }
 
 .even-columns {
@@ -48,15 +49,17 @@
 .grid-auto-fit {
   display: grid;
   gap: var(--grid-gap, $grid-gap);
-  grid-template-columns: repeat(auto-fit, minmax(min(pxToRem(250px), 100%), 1fr));
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(pxToRem(250px), 100%), 1fr)
+  );
 }
 
 .box-shadow-1 {
-  box-shadow: 0 0 .75rem rgb(0 0 0 / .25);
+  box-shadow: 0 0 0.75rem rgb(0 0 0 / 0.25);
 }
 
 .section-header {
-
   &:has(p) {
     margin-block-end: unit(36);
   }
@@ -66,7 +69,7 @@
   }
 
   &[data-decoration="true"]::after {
-    content: '';
+    content: "";
     display: block;
     width: 10rem;
     height: 1px;

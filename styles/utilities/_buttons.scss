@@ -1,4 +1,4 @@
-@use '../abstracts' as *;
+@use "../abstracts" as *;
 
 .button {
   display: inline-flex;
@@ -11,7 +11,7 @@
   padding: 1.125em 2em;
 }
 
-.button[data-type="accent"] {
+.button[data-type="primary"] {
   background-color: clr(primary, 400);
   color: clr(neutral, 900);
 }
