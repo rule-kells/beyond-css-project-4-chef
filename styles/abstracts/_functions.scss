@@ -36,6 +36,11 @@
   }
 }
 
-@function pxToRem($pxValue) {
-  @return math.div($pxValue, 16px) + 1rem;
+@function pxToRem($unit) {
+  @return math.div($unit, 16px) * 1rem;
+}
+
+@mixin fontSize($unit) {
+  font-size: $unit;
+  font-size: calculateRem($unit);
 }

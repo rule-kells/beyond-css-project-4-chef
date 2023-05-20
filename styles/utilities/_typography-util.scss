@@ -1,5 +1,23 @@
 @use "../abstracts" as *;
 
+@each $unit-name, $unit-value in $font-sizes {
+  .fs-#{$unit-name} {
+    font-size: $unit-value;
+    @if $unit-name > 600 {
+      line-height: 1.1;
+    }
+  }
+}
+
+@each $unit-name, $unit-value in $font-sizes {
+  .fs-heading-#{$unit-name} {
+    font-size: $unit-value;
+    @if $unit-name > 600 {
+      line-height: 1.1;
+    }
+  }
+}
+
 .ff-base {
   font-family: $ff-base;
 }
@@ -18,17 +36,16 @@
 //     }
 //   }
 
-  // @include mq(desktop) {
-  //   .fs-heading-s {
-  //     font-size: unit(20);
-  //   }
-  // }
+// @include mq(desktop) {
+//   .fs-heading-s {
+//     font-size: unit(20);
+//   }
+// }
 
-.uppercase { 
+.uppercase {
   text-transform: uppercase;
 }
 
-.text-center { 
-  text-align: center
+.text-center {
+  text-align: center;
 }
-

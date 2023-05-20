@@ -10,3 +10,94 @@ body {
   color: clr(neutral, 400);
   line-height: 1.5;
 }
+
+.primary-header {
+  position: absolute;
+  inset: 0 0 auto;
+}
+
+.primary-navigation {
+  --flex-column-gap: #{unit(48)};
+  // --flex-row-gap: 30px;
+
+  ul {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: clr(neutral, 100);
+    font-family: $ff-accent;
+    font-size: fs(600);
+
+    &:is(:hover, :focus) {
+      opacity: 0.7;
+      text-decoration: underline;
+    }
+  }
+}
+
+.hero {
+  padding-block: $hero-padding;
+  background-image: url("../../assets/hero-bg.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.section-header {
+  p {
+    max-width: 50ch;
+
+    .text-center & {
+      margin-inline: auto;
+    }
+  }
+
+  &:has(p) {
+    margin-block-end: unit(36);
+  }
+
+  &:not(:has(p)) {
+    margin-block-end: unit(36) * 2.5;
+  }
+
+  &[data-decoration="true"]::after {
+    content: "";
+    display: block;
+    width: 10rem;
+    height: 1px;
+    background-color: currentColor;
+    margin-block-start: unit(36);
+
+    .text-center & {
+      margin-inline: auto;
+    }
+  }
+}
+
+.card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    padding: $card-body-padding;
+  }
+
+  &[data-typ="testimonial"] &__body {
+    position: relative;
+    isolation: isolate;
+
+    &::after {
+      position: absolute;
+      top: -7rem;
+      left: 1rem;
+      content: "\201C";
+      z-index: -1;
+      font-size: 25rem;
+      font-family: $ff-accent;
+      opacity: 0.1;
+    }
+  }
+}
